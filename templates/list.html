@@ -1,0 +1,39 @@
+{% extends "home.html" %}
+
+{% block content %}
+<style>
+    .button {
+      background-color:#4CAF50;
+    }
+    .button2 {background-color: #008CBA;}
+    .button3 {background-color: #f44336;}
+</style>
+<div class="main">
+ 
+    {% for book in booksset %}.
+    <footer>
+        <div class="container">
+            <div class="row well ml-t">
+                <div class="col-lg-8 col-md-8">    
+                    <h1>Title        : {{ book.title }}</h1>
+                    <h2>Author       : {{ book.author }}</h2>
+                    <h3>Availability : {{ book.availability }}</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <button class="button2" formaction="/update/{{book.title}}">update</button> <button class="button3" formaction="/delete/{{book.title}}">delete</button>
+    <p>
+
+    </p>
+
+    {% endfor %}
+    </form>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <h1><button class="button" formaction="/create">Create</button></h1>
+    </form>
+</div>
+{% endblock %}

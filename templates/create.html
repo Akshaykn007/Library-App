@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <footer>
+        <div class="container">
+            <div class="row well ml-t">
+                <div class="col-lg-8 col-md-8">    
+                    <h2>Title        : {{ bookform.title }}</h2>
+                    <h2>Author       : {{ bookform.author }}</h2>
+                    <h2>Availability : {{ bookform.availability }}</h2>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

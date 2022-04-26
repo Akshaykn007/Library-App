@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="main">
+    <form method="POST">
+        {% csrf_token %}
+        <footer>
+            <div class="container">
+                <div class="row well ml-t">
+                    <div class="col-lg-8 col-md-8">    
+                        <h2>Title        : {{ form.title }}</h2>
+                        <h2>Author       : {{ form.author }}</h2>
+                        <h2>Availability : {{ form.availability }}</h2>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}

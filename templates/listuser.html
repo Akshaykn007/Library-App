@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="main">
+ 
+    {% for book in booksset %}.
+ 
+    <footer>
+        <div class="container">
+            <div class="row well ml-t">
+                <div class="col-lg-8 col-md-8">    
+                    <h1>Title        : {{ book.title }}</h1>
+                    <h2>Author       : {{ book.author }}</h2>
+                    <h3>Availability : {{ book.availability }}</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+    {% endfor %}
+ 
+</div>
+{% endblock %}
